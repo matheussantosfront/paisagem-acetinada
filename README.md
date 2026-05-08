@@ -14,4 +14,4 @@ Site institucional moderno desenvolvido para uma empresa de construção e refor
 - Seções de serviços e portfólio
 
 ## Projeto Online
-https://paisagemacetinada.ct.ws/
+https://paisagemacetinada.netlify.app/
