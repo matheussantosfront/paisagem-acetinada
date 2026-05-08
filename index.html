@@ -1,0 +1,1175 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Paisagem Acetinada • Reformas, Drywall, Pintura e Isolamento</title>
+  <meta name="description" content="Reformas residenciais e comerciais, drywall, pintura profissional, isolamento térmico/termoacústico e casas pré-fabricadas. Qualidade, agilidade e acabamento de alto padrão." />
+  <meta name="theme-color" content="#0B3D91" />
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#111827;
+      --muted:#4b5563;
+      --muted2:#6b7280;
+      --line:#e5e7eb;
+      --soft:#f7f8fb;
+      --soft2:#f3f4f6;
+
+      --accent:#2aa7df;   /* azul claro */
+      --accent2:#0b3d91;  /* azul forte */
+      --shadow:0 18px 50px rgba(17,24,39,.08);
+
+      --radius:18px;
+      --max:1160px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:var(--bg);
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+
+    /* ===== Topbar (sem redes sociais) ===== */
+    .topbar{
+      background:#0f172a;
+      color:#e5e7eb;
+      font-size:13px;
+    }
+    .topbar .wrap{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 18px;
+      flex-wrap:wrap;
+    }
+    .topbar a{color:#e5e7eb}
+    .topbar a:hover{color:#ffffff}
+    .topbar-left{
+      display:flex; gap:16px; flex-wrap:wrap; align-items:center;
+    }
+    .topbar-item{
+      display:inline-flex; gap:8px; align-items:center;
+      opacity:.95;
+    }
+    .owner{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color: rgba(229,231,235,.9);
+      font-weight:800;
+      letter-spacing:.02em;
+      flex-wrap:wrap;
+    }
+    .owner small{
+      font-weight:700;
+      color: rgba(229,231,235,.75);
+    }
+
+    /* ===== Header ===== */
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:#ffffff;
+      border-bottom:1px solid var(--line);
+    }
+    .header-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:16px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:240px;
+    }
+
+    /* LOGO com cantos arredondados reais */
+    .brandLogo{
+      width:56px;
+      height:56px;
+      display:block;
+      object-fit: cover;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:#fff;
+      padding:0;
+      overflow:hidden;
+      flex:0 0 auto;
+    }
+
+    .brandName{
+      display:flex; flex-direction:column; line-height:1.1;
+    }
+    .brandName strong{
+      font-size:15px;
+      letter-spacing:.2px;
+      font-weight:900;
+      text-transform:uppercase;
+    }
+    .brandName span{
+      color:var(--muted2);
+      font-size:12px;
+      margin-top:2px;
+    }
+
+    /* ===== Nav (desktop) ===== */
+    nav{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .navLink{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-size:14px;
+      color:var(--muted);
+      font-weight:900;
+      padding:10px 12px;
+      border-radius:12px;
+      transition:160ms ease;
+      border:1px solid transparent;
+    }
+    .navLink svg{width:18px;height:18px; fill: currentColor; opacity:.9}
+    .navLink:hover{
+      color:var(--text);
+      background: var(--soft2);
+      border-color: var(--line);
+      transform: translateY(-1px);
+    }
+    .navLink:active{transform: translateY(0px) scale(.98)}
+    .navLink.active{
+      color: var(--accent2);
+      background: linear-gradient(180deg, rgba(42,167,223,.14), rgba(42,167,223,.06));
+      border-color: rgba(42,167,223,.35);
+    }
+
+    /* CTA do desktop */
+    .header-cta{
+      display:flex; gap:10px; align-items:center;
+      justify-content:flex-end;
+      min-width:240px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--text);
+      font-weight:900;
+      font-size:14px;
+      cursor:pointer;
+      transition:160ms ease;
+      user-select:none;
+      white-space:nowrap;
+      will-change: transform;
+    }
+    .btn svg{width:18px;height:18px; fill: currentColor}
+    .btn:hover{transform: translateY(-1px); box-shadow:0 10px 25px rgba(17,24,39,.08)}
+    .btn:active{transform: translateY(0px) scale(.98)}
+    .btn.primary{
+      border-color: rgba(42,167,223,.35);
+      background: linear-gradient(180deg, rgba(42,167,223,.16), rgba(42,167,223,.06));
+      color:#0b3d91;
+    }
+    .btn.primary:hover{
+      border-color: rgba(42,167,223,.6);
+    }
+
+    /* CTA do NAV (aparece só no mobile) */
+    .navCta{
+      display:none;
+      font-weight:900;
+      color:#0b3d91 !important;
+      border:1px solid rgba(42,167,223,.45);
+      background: linear-gradient(180deg, rgba(42,167,223,.18), rgba(42,167,223,.06));
+      border-radius:16px;
+      padding:12px 14px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+      will-change: transform;
+    }
+    .navCta:hover{
+      background: linear-gradient(180deg, rgba(42,167,223,.24), rgba(42,167,223,.08));
+      border-color: rgba(42,167,223,.75);
+      transform: translateY(-1px);
+    }
+    .navCta:active{transform: translateY(0px) scale(.98)}
+    .navCta svg{width:18px;height:18px; fill: currentColor; margin-right:8px; vertical-align:-3px}
+
+    /* Pulse premium no Orçamento (mobile) */
+    .navCta::after{
+      content:"";
+      position:absolute;
+      inset:-30%;
+      background: radial-gradient(circle at 30% 30%, rgba(42,167,223,.35), transparent 60%);
+      transform: translateX(-30%);
+      opacity:.75;
+      animation: pulseGlow 2.4s ease-in-out infinite;
+      pointer-events:none;
+    }
+    @keyframes pulseGlow{
+      0%{transform: translateX(-30%) scale(.95); opacity:.55}
+      50%{transform: translateX(0%) scale(1.05); opacity:.85}
+      100%{transform: translateX(-30%) scale(.95); opacity:.55}
+    }
+
+    /* ===== Layout mobile (header premium) ===== */
+    @media (max-width: 980px){
+      .header-inner{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:12px;
+      }
+      .brand{width:100%; min-width:auto}
+      .header-cta{display:none;}
+
+      nav{
+        width:100%;
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap:10px;
+        justify-content:stretch;
+      }
+
+      .navLink{
+        justify-content:center;
+        padding:12px 10px;
+        background: var(--soft2);
+        border:1px solid var(--line);
+        border-radius:16px;
+      }
+
+      .navCta{
+        display:block;
+        grid-column: 1 / -1;
+        background:#fff;
+      }
+    }
+    @media (max-width: 520px){
+      nav{grid-template-columns: repeat(2, 1fr);}
+      .navCta{grid-column: 1 / -1;}
+    }
+
+    /* ===== Hero ===== */
+    .hero{padding:26px 0 6px;}
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:18px;
+      padding:22px;
+      border-radius: var(--radius);
+      background: var(--soft);
+      border:1px solid var(--line);
+    }
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--accent2);
+      font-weight:900;
+    }
+    h1{
+      margin:10px 0 8px;
+      font-size:40px;
+      line-height:1.08;
+      letter-spacing:-.02em;
+    }
+    @media (max-width: 520px){ h1{font-size:32px} }
+
+    .lead{
+      margin:0;
+      color:var(--muted);
+      font-size:17px;
+      max-width: 75ch;
+    }
+    .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--muted);
+      font-size:13px;
+      font-weight:800;
+      transition:160ms ease;
+    }
+    .chip:hover{transform: translateY(-1px)}
+    .heroActions{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+
+    /* ===== Sections ===== */
+    section{
+      padding:26px 0;
+      border-top:1px solid var(--line);
+    }
+    section:first-of-type{border-top:none}
+    .sectionTitle{
+      margin:0 0 8px;
+      font-size:28px;
+      letter-spacing:-.01em;
+    }
+    .sectionDesc{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:15px;
+      max-width: 90ch;
+    }
+
+    /* ===== Cards ===== */
+    .infoStack{display:grid; gap:12px;}
+    .infoCard{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background:#fff;
+      box-shadow: var(--shadow);
+      transition:160ms ease;
+    }
+    .infoCard:hover{transform: translateY(-1px)}
+    .infoIcon{
+      width:46px; height:46px;
+      border-radius:14px;
+      border:1px solid rgba(42,167,223,.25);
+      background: linear-gradient(180deg, rgba(42,167,223,.14), rgba(42,167,223,.05));
+      display:flex; align-items:center; justify-content:center;
+      flex: 0 0 auto;
+      color: var(--accent2);
+      font-weight:900;
+    }
+    .infoIcon svg{width:20px; height:20px; fill: var(--accent2)}
+    .infoCard h3{
+      margin:0 0 6px;
+      font-size:16px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+    }
+    .infoCard p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    /* ===== Carousel ===== */
+    .carouselWrap{
+      margin-top: 10px;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background:#fff;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .carouselHeader{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 16px;
+      border-bottom:1px solid var(--line);
+      background: #fff;
+      flex-wrap:wrap;
+    }
+    .carouselHeader strong{
+      font-weight:900;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-size:13px;
+      color: var(--accent2);
+    }
+    .carouselHint{
+      color: var(--muted2);
+      font-size:13px;
+      font-weight:800;
+    }
+    .carouselFrame{position:relative;}
+    .carousel{
+      display:flex;
+      overflow-x:auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior:smooth;
+      user-select:none;
+      cursor:grab;
+    }
+    .carousel.dragging{cursor:grabbing}
+    .carousel::-webkit-scrollbar{height:10px}
+    .carousel::-webkit-scrollbar-thumb{
+      background: rgba(17,24,39,.18);
+      border-radius:999px;
+    }
+
+    .slide{
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      position:relative;
+      background:#000;
+    }
+    .slide img{
+      width:100%;
+      height: 520px;
+      object-fit: cover;
+      display:block;
+      filter: contrast(1.02) saturate(1.02);
+    }
+    @media (max-width: 900px){ .slide img{height: 360px;} }
+    @media (max-width: 520px){ .slide img{height: 280px;} }
+
+    .slideCaption{
+      position:absolute;
+      left:0; right:0; bottom:0;
+      padding:14px 16px;
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,.70));
+      color:#fff;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .capText{max-width: 70ch;}
+    .capTitle{margin:0; font-weight:900; letter-spacing:.02em; font-size:16px;}
+    .capDesc{margin:4px 0 0; opacity:.9; font-size:13px; line-height:1.35;}
+    .capTag{
+      display:inline-flex;
+      align-items:center;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.22);
+      background: rgba(0,0,0,.25);
+      font-weight:900;
+      font-size:12px;
+      white-space:nowrap;
+    }
+
+    .carArrow{
+      position:absolute;
+      top:50%;
+      transform: translateY(-50%);
+      width:46px; height:46px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.28);
+      background: rgba(0,0,0,.35);
+      color:#fff;
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer;
+      transition:160ms ease;
+      z-index:5;
+      user-select:none;
+    }
+    .carArrow:hover{background: rgba(0,0,0,.48); transform: translateY(-50%) translateY(-1px)}
+    .carArrow:active{transform: translateY(-50%) scale(.98)}
+    .carArrow.prev{left:12px}
+    .carArrow.next{right:12px}
+
+    .carControls{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-top:1px solid var(--line);
+      background:#fff;
+    }
+    .dots{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:center;
+    }
+    .dot{
+      width:10px; height:10px;
+      border-radius:999px;
+      border:1px solid rgba(17,24,39,.18);
+      background: rgba(17,24,39,.10);
+      cursor:pointer;
+      transition:160ms ease;
+    }
+    .dot.active{
+      background: rgba(42,167,223,.70);
+      border-color: rgba(42,167,223,.85);
+      transform: scale(1.12);
+    }
+
+    /* ===== Footer ===== */
+    footer{
+      border-top:1px solid var(--line);
+      background:#0f172a;
+      color:#e5e7eb;
+      padding:34px 0 26px;
+      margin-top: 10px;
+    }
+    .footerGrid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      align-items:start;
+    }
+    @media (max-width: 900px){ .footerGrid{grid-template-columns:1fr} }
+    .footerBrand{display:flex; gap:12px; align-items:center; margin-bottom: 10px;}
+    .footerLogo{
+      width:54px;
+      height:54px;
+      display:block;
+      object-fit: cover;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.18);
+      background:#fff;
+      padding:0;
+      overflow:hidden;
+      flex:0 0 auto;
+    }
+    .footerBrand strong{
+      font-weight:900;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+    .footerP{
+      margin:10px 0 0;
+      color: rgba(229,231,235,.85);
+      line-height:1.6;
+      font-size:14px;
+      max-width: 80ch;
+    }
+    .footerCard{
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      border-radius: var(--radius);
+      padding:16px;
+    }
+    .footerCard h4{
+      margin:0 0 10px;
+      font-size:14px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#fff;
+    }
+    .footerRow{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:10px 0;
+      border-top:1px solid rgba(255,255,255,.10);
+      font-size:14px;
+      color: rgba(229,231,235,.9);
+    }
+    .footerRow:first-of-type{border-top:none; padding-top:0}
+    .footerRow svg{width:18px; height:18px; fill:#e5e7eb; opacity:.9; margin-top:2px}
+    .footerRow a{color:#e5e7eb; font-weight:900}
+    .footerRow a:hover{color:#fff}
+    .footerBottom{
+      margin-top:18px;
+      padding-top:14px;
+      border-top:1px solid rgba(255,255,255,.12);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      color: rgba(229,231,235,.75);
+      font-size:13px;
+    }
+
+    /* ===== Floating WhatsApp ===== */
+    .floatingCTA{
+      position:fixed;
+      right:16px; bottom:16px;
+      z-index:60;
+      display:none;
+      border-color: rgba(255,255,255,.22);
+      background: rgba(15,23,42,.92);
+      color:#fff;
+    }
+    .floatingCTA:hover{border-color: rgba(42,167,223,.55)}
+    @media (max-width: 760px){ .floatingCTA{display:inline-flex} }
+  </style>
+
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18019710588">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18019710588');
+</script>
+
+
+<!-- Event snippet for Solicitar cotação conversion page -->
+<script>
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18019710588/cg9YCK320YkcEPzsu5BD',
+      'value': 1.0,
+      'currency': 'BRL'
+  });
+</script>
+
+</head>
+
+<body>
+  <!-- TOPBAR -->
+  <div class="topbar" aria-label="Barra superior">
+    <div class="wrap">
+      <div class="topbar-left">
+        <span class="topbar-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#e5e7eb" aria-hidden="true">
+            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/>
+          </svg>
+          <a href="tel:+5511944489580" aria-label="Ligar">+55 (11) 94448-9580</a>
+        </span>
+
+        <span class="topbar-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#e5e7eb" aria-hidden="true">
+            <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+          <a href="mailto:evandrop.s@outlook.com" aria-label="Enviar e-mail">evandrop.s@outlook.com</a>
+        </span>
+      </div>
+
+      <div class="owner" aria-label="Proprietário">
+        <span></span>
+        <span id="ownerName">Evandro Santos</span>
+        <small>(Paisagem Acetinada)</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="wrap header-inner">
+      <div class="brand">
+        <img class="brandLogo" src="assets/logo.png" alt="Logo Paisagem Acetinada" />
+        <div class="brandName">
+          <strong>Paisagem Acetinada</strong>
+          <span>Reformas • Drywall • Pintura • Isolamento</span>
+        </div>
+      </div>
+
+      <nav aria-label="Menu">
+        <!-- CTA mobile destacado -->
+        <a class="navCta" id="btnWhatsNav" href="#">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.52 3.48A11.73 11.73 0 0 0 12.01 0C5.38 0 .01 5.37.01 12c0 2.11.55 4.17 1.6 5.99L0 24l6.2-1.6A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.2-3.48-8.52zM12 21.9a9.9 9.9 0 0 1-5.05-1.38l-.36-.22-3.68.95.98-3.58-.24-.37A9.89 9.89 0 1 1 12 21.9zm5.7-7.36c-.31-.16-1.86-.92-2.15-1.02-.29-.11-.51-.16-.73.16-.22.31-.83 1.02-1.01 1.23-.18.2-.37.23-.68.08-.31-.16-1.31-.48-2.49-1.53-.92-.82-1.54-1.84-1.72-2.15-.18-.31-.02-.48.14-.64.14-.14.31-.37.46-.55.16-.18.2-.31.31-.52.1-.2.05-.39-.03-.55-.08-.16-.73-1.76-1-2.41-.26-.62-.53-.54-.73-.55h-.62c-.2 0-.52.08-.8.39-.28.31-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.16.2 2.13 3.25 5.16 4.56.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.86-.76 2.12-1.49.26-.73.26-1.36.18-1.49-.08-.13-.29-.2-.6-.36z"/>
+          </svg>
+          Orçamento no WhatsApp
+        </a>
+
+        <a class="navLink" href="#sobre" data-section="sobre">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 10-5-5 5 5 0 005 5zm0 2c-4.33 0-8 2.17-8 5v1h16v-1c0-2.83-3.67-5-8-5z"/></svg>
+          Sobre
+        </a>
+
+        <a class="navLink" href="#portfolio" data-section="portfolio">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4H4a2 2 0 00-2 2v4h8V4zm12 0h-8v6h10V6a2 2 0 00-2-2zM2 20a2 2 0 002 2h6v-8H2zm12 2h8a2 2 0 002-2v-6H14z"/></svg>
+          Portfólio
+        </a>
+
+        <a class="navLink" href="#servicos" data-section="servicos">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.7 19.3l-6.6-6.6a6 6 0 10-3.4 3.4l6.6 6.6a2.4 2.4 0 003.4-3.4zM10 14a4 4 0 114-4 4 4 0 01-4 4z"/></svg>
+          Serviços
+        </a>
+
+        <a class="navLink" href="#contato" data-section="contato">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8V7l-3 2-2-2 3-2h-4l-3 2-3-2H5l3 2-2 2-3-2v1l3 2-3 2v1l3-2 2 2-3 2h4l3-2 3 2h4l-3-2 2-2 3 2v-1l-3-2 3-2z"/></svg>
+          Contatos
+        </a>
+      </nav>
+
+      <!-- CTA desktop -->
+      <div class="header-cta">
+        <a class="btn primary" id="btnWhatsTop" href="#">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.52 3.48A11.73 11.73 0 0 0 12.01 0C5.38 0 .01 5.37.01 12c0 2.11.55 4.17 1.6 5.99L0 24l6.2-1.6A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.2-3.48-8.52z"/>
+          </svg>
+          Orçamento
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <div class="hero" id="topo">
+      <div class="heroGrid">
+        <div class="kicker">QUALIDADE • AGILIDADE • ACABAMENTO FINO</div>
+        <h1>Reformas e construção com padrão <span style="color:var(--accent2)">profissional</span>.</h1>
+        <p class="lead">
+          Reformas residenciais e comerciais, drywall, pintura profissional, isolamento térmico/termoacústico
+          e montagem de casas pré-fabricadas.
+        </p>
+
+        <div class="chips" aria-label="Diferenciais">
+          <span class="chip">🏗️ Reformas</span>
+          <span class="chip">🧩 Drywall</span>
+          <span class="chip">🎨 Pintura</span>
+          <span class="chip">🌡️ Isolamento</span>
+          <span class="chip">🏠 Pré-fabricadas</span>
+        </div>
+
+        <div class="heroActions">
+          <a class="btn primary" id="btnWhatsHero" href="#">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.52 3.48A11.73 11.73 0 0 0 12.01 0C5.38 0 .01 5.37.01 12c0 2.11.55 4.17 1.6 5.99L0 24l6.2-1.6A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.2-3.48-8.52z"/>
+            </svg>
+            Chamar no WhatsApp
+          </a>
+          <a class="btn" href="#portfolio">Ver portfólio</a>
+          <a class="btn" href="#contato">Contatos</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+      <h2 class="sectionTitle">Sobre</h2>
+      <p class="sectionDesc">
+        Somos especializados em reformas residenciais e comerciais, oferecendo soluções completas em drywall, pintura profissional, isolamento térmico e termoacústico, além da construção de casas pré-fabricadas. Contamos com mais de 20 anos de experiência no setor da construção, incluindo atuação na Europa, garantindo qualidade, eficiência e acabamento de alto padrão.
+      </p>
+
+      <div class="infoStack">
+        <div class="infoCard">
+          <div class="infoIcon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 10l9-7 9 7v11a1 1 0 01-1 1h-5v-7H9v7H4a1 1 0 01-1-1V10z"/></svg>
+          </div>
+          <div>
+            <h3>Atendimento</h3>
+            <p>Solicite seu orçamento diretamente pelo WhatsApp. Se preferir, agende uma visita. Envie fotos ou vídeos, medidas aproximadas e descreva o tipo de serviço desejado.</p>
+          </div>
+        </div>
+
+        <div class="infoCard">
+          <div class="infoIcon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm1 7V3.5L18.5 9H15z"/></svg>
+          </div>
+          <div>
+            <h3>Qualidade</h3>
+            <p>Execução com organização, agilidade e acabamento de alto padrão do início ao fim.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFÓLIO -->
+    <section id="portfolio">
+      <h2 class="sectionTitle">Portfólio</h2>
+
+      <div class="carouselWrap" aria-label="Carrossel de portfólio">
+        <div class="carouselHeader">
+          <strong>Obras e Execução</strong>
+          <span class="carouselHint">Arraste para o lado • Use ← →</span>
+        </div>
+
+        <div class="carouselFrame">
+          <button class="carArrow prev" id="carPrev" type="button" aria-label="Anterior">←</button>
+          <button class="carArrow next" id="carNext" type="button" aria-label="Próxima">→</button>
+
+          <div class="carousel" id="carousel">
+            <div class="slide">
+              <img src="assets/obra-01.jpg" alt="Obra comercial em andamento com estrutura e instalações" loading="lazy">
+              <div class="slideCaption">
+                <div class="capText">
+                  <p class="capTitle">Obra comercial • Estrutura</p>
+                  <p class="capDesc">Execução com organização e padrão profissional.</p>
+                </div>
+                <span class="capTag">🏗️ Reforma</span>
+              </div>
+            </div>
+
+            <div class="slide">
+              <img src="assets/obra-02.jpg" alt="Estrutura de drywall em corredor" loading="lazy">
+              <div class="slideCaption">
+                <div class="capText">
+                  <p class="capTitle">Drywall • Estrutura metálica</p>
+                  <p class="capDesc">Montagem de paredes e divisórias com precisão.</p>
+                </div>
+                <span class="capTag">🧩 Drywall</span>
+              </div>
+            </div>
+
+            <div class="slide">
+              <img src="assets/isolamento-01.jpg" alt="Isolamento em parede com estrutura metálica" loading="lazy">
+              <div class="slideCaption">
+                <div class="capText">
+                  <p class="capTitle">Isolamento • Conforto térmico</p>
+                  <p class="capDesc">Soluções para paredes e tetos com melhor desempenho.</p>
+                </div>
+                <span class="capTag">🌡️ Isolamento</span>
+              </div>
+            </div>
+
+            <div class="slide">
+              <img src="assets/revestimento-01.jpg" alt="Revestimento em parede com acabamento alinhado" loading="lazy">
+              <div class="slideCaption">
+                <div class="capText">
+                  <p class="capTitle">Revestimento • Acabamento</p>
+                  <p class="capDesc">Execução alinhada e pronta para finalização.</p>
+                </div>
+                <span class="capTag">🧱 Acabamento</span>
+              </div>
+            </div>
+
+            <div class="slide">
+              <img src="assets/drywall-01.jpg" alt="Drywall com massa e preparação para pintura" loading="lazy">
+              <div class="slideCaption">
+                <div class="capText">
+                  <p class="capTitle">Drywall • Preparação</p>
+                  <p class="capDesc">Pronto para pintura e acabamento fino.</p>
+                </div>
+                <span class="capTag">🎨 Pintura</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carControls">
+          <div class="dots" id="dots" aria-label="Indicadores do carrossel"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos">
+      <h2 class="sectionTitle">Serviços</h2>
+
+      <div class="infoStack">
+        <div class="infoCard">
+          <div class="infoIcon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 21h16v-2H4v2zm2-4h12V3H6v14zm2-2V5h8v10H8z"/></svg>
+          </div>
+          <div>
+            <h3>Reformas em geral</h3>
+            <p>Reformas completas • Modernização de ambientes • Reparos estruturais e acabamento fino.</p>
+          </div>
+        </div>
+
+        <div class="infoCard">
+          <div class="infoIcon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 3h18v4H3V3zm0 6h18v12H3V9zm2 2v8h14v-8H5z"/></svg>
+          </div>
+          <div>
+            <h3>Drywall</h3>
+            <p>Paredes e divisórias • Forros e rebaixamento de teto • Soluções rápidas para divisão de espaços.</p>
+          </div>
+        </div>
+
+        <div class="infoCard">
+          <div class="infoIcon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 20h16v2H4v-2zM6 2h12l-1 14H7L6 2zm3 4v8h2V6H9zm4 0v8h2V6h-2z"/></svg>
+          </div>
+          <div>
+            <h3>Pintura profissional</h3>
+            <p>Interna e externa • Preparação de superfícies • Massa corrida • Acabamento fino.</p>
+          </div>
+        </div>
+
+        <div class="infoCard">
+          <div class="infoIcon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9a2 2 0 112-2 2 2 0 01-2 2z"/></svg>
+          </div>
+          <div>
+            <h3>Isolamento térmico e termoacústico</h3>
+            <p>Mais conforto • Redução de calor • Economia de energia • Melhor acústica.</p>
+          </div>
+        </div>
+
+        <div class="infoCard">
+          <div class="infoIcon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 21h18v-2H3v2zm2-4h14V3H5v14zm2-2V5h10v10H7z"/></svg>
+          </div>
+          <div>
+            <h3>Casas pré-fabricadas</h3>
+            <p>Construção e montagem • Projetos modernos • Rapidez na execução e alto padrão.</p>
+          </div>
+        </div>
+
+        <div class="infoCard">
+          <div class="infoIcon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2l4 4-1.4 1.4L13 5.8V13h-2V5.8L9.4 7.4 8 6l4-4zm-7 16h14v2H5v-2z"/></svg>
+          </div>
+          <div>
+            <h3>Manutenção e revitalização</h3>
+            <p>Reparos, ajustes e melhorias • Preparação e acabamento fino.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATOS -->
+    <section id="contato">
+      <h2 class="sectionTitle">Contatos</h2>
+      <p class="sectionDesc">Orçamento direto pelo WhatsApp ou e-mail.</p>
+
+      <div class="infoStack">
+        <div class="infoCard">
+          <div class="infoIcon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/></svg>
+          </div>
+          <div>
+            <h3>Telefone / WhatsApp</h3>
+            <p><a href="tel:+5511944489580" style="font-weight:900;color:var(--accent2)">+55 (11) 94448-9580</a></p>
+            <p style="margin-top:10px">
+              <a class="btn primary" id="btnWhatsContato" href="#">Abrir WhatsApp</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="infoCard">
+          <div class="infoIcon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div>
+            <h3>E-mail</h3>
+            <p><a href="mailto:evandrop.s@outlook.com" style="font-weight:900;color:var(--accent2)">evandrop.s@outlook.com</a></p>
+            <p style="margin-top:10px">
+              <a class="btn" id="btnEmailContato" href="#">Enviar e-mail</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="btn floatingCTA" id="btnFloatingWhats" href="#" aria-label="Chamar no WhatsApp">
+    💬 WhatsApp
+  </a>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="footerGrid">
+        <div>
+          <div class="footerBrand">
+            <img class="footerLogo" src="assets/logo.png" alt="Logo Paisagem Acetinada" />
+            <div>
+              <strong>Paisagem Acetinada</strong>
+              <div style="color:rgba(229,231,235,.75); font-size:13px; margin-top:4px;">
+                Reformas • Drywall • Pintura • Isolamento
+              </div>
+              <div style="color:rgba(229,231,235,.75); font-size:13px; margin-top:6px;">
+                Proprietário: <span id="ownerNameFooter" style="font-weight:900;color:#fff">Evandro Santos</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="footerP">
+            Reformas residenciais e comerciais, drywall, pintura profissional, isolamento térmico/termoacústico
+            e montagem de casas pré-fabricadas.
+          </p>
+        </div>
+
+        <div class="footerCard" aria-label="Contatos">
+          <h4>Contatos</h4>
+
+          <div class="footerRow">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/></svg>
+            <div>
+              Telefone / WhatsApp<br>
+              <a href="tel:+5511944489580">+55 (11) 94448-9580</a>
+            </div>
+          </div>
+
+          <div class="footerRow">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <div>
+              E-mail<br>
+              <a href="mailto:evandrop.s@outlook.com">evandrop.s@outlook.com</a>
+            </div>
+          </div>
+
+          <div class="footerRow">
+            <svg viewBox="0 0 24 24"><path d="M12 1a11 11 0 1011 11A11 11 0 0012 1zm1 17h-2v-2h2zm0-4h-2V6h2z"/></svg>
+            <div>
+              Orçamentos<br>
+              <span style="color:rgba(229,231,235,.85)">Envie fotos/vídeo e medidas para agilizar.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footerBottom">
+        <div>© <span id="year"></span> Paisagem Acetinada • Todos os direitos reservados</div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="#topo" style="color:rgba(229,231,235,.85); font-weight:900">Voltar ao topo</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== CONFIG =====
+    const BRAND = "Paisagem Acetinada";
+    const OWNER_NAME = "Evandro Santos";
+    const PHONE_RAW = "5511944489580";
+    const EMAIL = "evandrop.s@outlook.com";
+
+    // Nome do dono
+    const ownerTop = document.getElementById("ownerName");
+    const ownerFooter = document.getElementById("ownerNameFooter");
+    if(ownerTop) ownerTop.textContent = OWNER_NAME;
+    if(ownerFooter) ownerFooter.textContent = OWNER_NAME;
+
+    // Links
+    const WA_TEXT = encodeURIComponent(
+      `Olá! Vim pelo site da ${BRAND}. Quero um orçamento.\n\n` +
+      `Serviço:\nLocal:\nMedidas/fotos:\nPrazo desejado:`
+    );
+
+    const waLink = `https://wa.me/${PHONE_RAW}?text=${WA_TEXT}`;
+    const mailLink =
+      `mailto:${EMAIL}` +
+      `?subject=${encodeURIComponent("Orçamento - " + BRAND)}` +
+      `&body=${encodeURIComponent("Olá! Gostaria de um orçamento.\n\nServiço:\nLocal:\nMedidas/fotos:\nPrazo desejado:\n")}`;
+
+    const setHref = (id, href) => { const el = document.getElementById(id); if(el) el.href = href; };
+
+    setHref("btnWhatsTop", waLink);
+    setHref("btnWhatsNav", waLink);
+    setHref("btnWhatsHero", waLink);
+    setHref("btnWhatsContato", waLink);
+    setHref("btnFloatingWhats", waLink);
+    setHref("btnEmailContato", mailLink);
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ===== Carousel =====
+    const carousel = document.getElementById("carousel");
+    const slides = Array.from(carousel.querySelectorAll(".slide"));
+    const dotsWrap = document.getElementById("dots");
+    const prevBtn = document.getElementById("carPrev");
+    const nextBtn = document.getElementById("carNext");
+
+    const dots = slides.map((_, i) => {
+      const d = document.createElement("button");
+      d.className = "dot";
+      d.type = "button";
+      d.setAttribute("aria-label", `Ir para a foto ${i+1}`);
+      d.addEventListener("click", () => goTo(i));
+      dotsWrap.appendChild(d);
+      return d;
+    });
+
+    function setActiveDot(i){
+      dots.forEach((d, idx) => d.classList.toggle("active", idx === i));
+    }
+
+    function goTo(i){
+      const s = slides[i];
+      if(!s) return;
+      carousel.scrollTo({ left: s.offsetLeft, behavior: "smooth" });
+      setActiveDot(i);
+    }
+
+    function currentIndex(){
+      const x = carousel.scrollLeft + carousel.clientWidth / 2;
+      let best = 0, bestDist = Infinity;
+      slides.forEach((s, i) => {
+        const center = s.offsetLeft + s.clientWidth/2;
+        const dist = Math.abs(center - x);
+        if(dist < bestDist){ bestDist = dist; best = i; }
+      });
+      return best;
+    }
+
+    prevBtn.addEventListener("click", () => {
+      const i = currentIndex();
+      goTo(Math.max(0, i - 1));
+    });
+    nextBtn.addEventListener("click", () => {
+      const i = currentIndex();
+      goTo(Math.min(slides.length - 1, i + 1));
+    });
+
+    let tick = null;
+    carousel.addEventListener("scroll", () => {
+      clearTimeout(tick);
+      tick = setTimeout(() => setActiveDot(currentIndex()), 80);
+    });
+    setActiveDot(0);
+
+    // Drag no desktop
+    (function(){
+      let isDown = false;
+      let startX = 0;
+      let scrollLeft = 0;
+
+      carousel.addEventListener("pointerdown", (e) => {
+        isDown = true;
+        carousel.classList.add("dragging");
+        startX = e.clientX;
+        scrollLeft = carousel.scrollLeft;
+        carousel.setPointerCapture?.(e.pointerId);
+      });
+
+      carousel.addEventListener("pointermove", (e) => {
+        if(!isDown) return;
+        const walk = (e.clientX - startX) * 1.2;
+        carousel.scrollLeft = scrollLeft - walk;
+      });
+
+      const end = () => {
+        isDown = false;
+        carousel.classList.remove("dragging");
+      };
+
+      carousel.addEventListener("pointerup", end);
+      carousel.addEventListener("pointercancel", end);
+      carousel.addEventListener("mouseleave", end);
+    })();
+
+    // ===== Menu ativo ao rolar (premium) =====
+    const navLinks = Array.from(document.querySelectorAll(".navLink[data-section]"));
+    const sections = navLinks
+      .map(a => document.getElementById(a.dataset.section))
+      .filter(Boolean);
+
+    const setActiveNav = (id) => {
+      navLinks.forEach(a => a.classList.toggle("active", a.dataset.section === id));
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      // pega a seção mais visível
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if(visible?.target?.id) setActiveNav(visible.target.id);
+    }, {
+      root: null,
+      threshold: [0.25, 0.4, 0.6],
+      rootMargin: "-20% 0px -55% 0px"
+    });
+
+    sections.forEach(s => io.observe(s));
+    setActiveNav("sobre");
+  </script>
+</body>
+</html>
